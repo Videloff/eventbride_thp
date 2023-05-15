@@ -7,12 +7,12 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validate :not_passed
 
-  validates :duration, presence: true, numericality: {only_integer: true, greater_than: 0}
+  validates :duration, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validate :valid_duration
 
-  validates :title, presence: true, length { minimum: 5, maximum: 140 }
-  validates :description, presence: true, length { minimum: 20, maximum: 1000 }
-  validates :price, presence: true, length { minimum: 1, maximum: 1000 }
+  validates :title, presence: true, length: { minimum: 5, maximum: 140 }
+  validates :description, presence: true, length: { minimum: 20, maximum: 1000 }
+  validates :price, presence: true, length: { minimum: 1, maximum: 1000 }
   validates :location, presence: true
 
   def not_passed
