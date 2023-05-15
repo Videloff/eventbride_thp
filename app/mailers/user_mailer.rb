@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'no_reply.thp@​yahoo.com'
+  default from: 'project-thp@laposte.net'
 
   def welcome_email(user)
     @user = user 
