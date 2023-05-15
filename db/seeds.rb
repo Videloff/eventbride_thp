@@ -2,8 +2,8 @@ Attendance.delete_all
 Event.delete_all
 User.delete_all
 
-# Créer 30 utilisateurs
-30.times do
+# Créer 10 utilisateurs
+5.times do
   User.create!(
     email: Faker::Internet.email(domain: 'yopmail.com'),
     encrypted_password: Faker::Internet.password,
@@ -13,8 +13,8 @@ User.delete_all
   )
 end
 
-# Créer 15 events
-15.times do
+# Créer 5 events
+5.times do
   Event.create(
     title: Faker::JapaneseMedia::OnePiece.quote,
     start_date: Faker::Date.forward(days: 10),
