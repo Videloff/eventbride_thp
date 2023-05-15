@@ -1,4 +1,6 @@
 User.destroy_all
+Event.destroy_all
+Attendance.destroy_all
 
 # Créer 30 utilisateurs
 30.times do
@@ -10,10 +12,6 @@ User.destroy_all
     last_name: Faker::Name.last_name
   )
 end
-
-# User.destroy_all
-# Event.destroy_all
-# Attendance.destroy_all
 
 # def generate_random_multiple_of_5(min_value, max_value)
 #   range_size = (max_value - min_value) / 5 + 1
