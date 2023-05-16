@@ -36,6 +36,7 @@
             <!-- push a droite -->
             <div class="session-nav drop-marge">
               <!-- !! connected !! -->
+              <% if current_user %>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profil
@@ -46,6 +47,7 @@
                 </ul>
               </li>
               <!-- !! visitor !! -->
+              <% else %>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Se connecter
@@ -55,6 +57,7 @@
                   <%= link_to "S'incrire", new_user_registration_path, :class=>"dropdown-item" %>
                 </ul>
               </li>
+              <% end %>
             </div>
           </ul>
         </div>
