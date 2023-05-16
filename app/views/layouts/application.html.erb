@@ -19,7 +19,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
       <div class="container-fluid">
-        <a class="navbar-brand">Eventbride</a>
+        <a class="navbar-brand name-marge">Eventbride</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,7 @@
               <%= link_to "Créer un événement", root_path, :class=>"nav-link" %>
             </li>
             <!-- push a droite -->
-            <div class="session-nav">
+            <div class="session-nav drop-marge">
               <!-- !! connected !! -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +50,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Se connecter
                 </a>
-                <ul class="dropdown-menu link-light">
+                <ul class="dropdown-menu">
                   <%= link_to "Se connecter", new_user_session_path, :class=>"dropdown-item" %>
                   <%= link_to "S'incrire", new_user_registration_path, :class=>"dropdown-item" %>
                 </ul>

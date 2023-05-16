@@ -26,3 +26,11 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.drop-marge {
+  padding-right: 20px;
+}
+
+.name-marge {
+  padding-left: 20px;
+}
