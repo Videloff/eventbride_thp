@@ -4,13 +4,16 @@
       <% @events.reverse_each.with_index do |ev| %>
         <div class="col-md-3" style="margin-top: 6%; margin-bottom: 6%" >
           <div class="card-sl">
-            <div class="card-heading">
+            <div class="card-heading card-txt">
               <%= ev.title %>
             </div>
-            <div class="card-text">
+            <div class="card-text card-txt">
+              par <%= link_to "#{ev.admin.first_name}", user_path(ev.admin.id) %>
+            </div>
+            <div class="card-text card-txt">
               <%= ev.description %>
             </div>
-            <div class="card-text">
+            <div class="card-text card-txt">
               <h6><%= ev.price %>€</h6>
             </div>
             <%= link_to "Voir l'event", event_path(ev.id), :class=>"btn btn-dark gradient-button" %>

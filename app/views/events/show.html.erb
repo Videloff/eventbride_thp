@@ -1,0 +1,16 @@
+<center>
+  <div>
+    <div class="card border-secondary mb-3" style="width: 600px;">
+      <h2 class="card-title"><%= @event.title %></h2>
+      <p class="card-header">organisé à <%= @event.location %></p>
+      <br>
+      <p class="card-title text-secondary">Description</p>
+      <h5 class="card-header"><%= @event.description %></h5>
+      <p class="card-title text-secondary">Dates</p>
+      <h5>Du <%= @event.start_date %> au <%= @event.start_date += @event.duration %></h5>
+      <p class="card-title text-secondary">Pour plus de renseignement, contactez <%= @event.admin.first_name %> par mail : <%= @event.admin.email %></p>
+      <p class="card-title text-secondary"><%= @registered %> utilisateur(s) inscrit actuellement</p>
+      <h2 class="card-title"><%= @event.price %>€</h2>
+    </div>
+  </div>
+</center>

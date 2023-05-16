@@ -64,6 +64,10 @@ body {
   color:rgb(223, 223, 223);
 }
 
+.container {
+  overflow: hidden;
+}
+
 .card-txt {
   color:#195c72;
 }
@@ -85,6 +89,16 @@ body {
 }
 .gradient-button:hover {
   background: linear-gradient(to bottom, #7fb6c9, #195c72);
+}
+
+.my_link {
+  text-decoration: none;
+  color:rgb(51, 131, 131);
+}
+
+.my_link:hover {
+  color:rgb(14, 187, 172);
+  text-shadow: 0cap;
 }
 
     /*  Helper Styles */

@@ -4,6 +4,11 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def show
+    @event = Event.find(params[:id])
+    @registered = Attendance.distinct.count(:user_id)
+  end
+
   def new
     @event = Event.new
   end
