@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :events
 
   # Defines the root path route ("/")
-  root "events#index"
+  root to: "events#index"
 
   # set root redirect '/' to '/gossips' as index 
   # root to: redirect('/events')
