@@ -15,7 +15,7 @@
 
   </head>
 
-  <body data-turbo="false"  style="background-color: black;">
+  <body data-turbo="false" style="background-color: black;">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
       <div class="container-fluid">
@@ -43,7 +43,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Mon profil</a></li>
-                    <%= link_to "Me deconnecter", destroy_user_session_path, :class=>"dropdown-item" %>
+                    <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
                   </ul>
                 </li>
               <!-- !! visitor !! -->
