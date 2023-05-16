@@ -14,4 +14,15 @@
  *= require_self
  */
 
- 
+ .session-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+.navbar-nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

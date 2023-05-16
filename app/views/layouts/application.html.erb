@@ -15,49 +15,52 @@
 
   </head>
 
-  <body data-turbo="false">
+  <body data-turbo="false"  style="background-color: black;">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
-  <div class="container-fluid">
-    <a class="navbar-brand">Eventbride</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <!-- Home -->
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Accueil</a>
-        </li>
-        <!-- New event -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">Créer un événement</a>
-        </li>
-        <!-- !! connected !! -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profil
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Mon profil</a></li>
-            <li><a class="dropdown-item" href="#">Me deconnecter</a></li>
+      <div class="container-fluid">
+        <a class="navbar-brand">Eventbride</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav navbar-nav-links">
+            <!-- Home -->
+            <li class="nav-item">
+              <%= link_to "Accueil", root_path, :class=>"nav-link" %>
+            </li>
+            <!-- New event !!!!!!!!!!!! -->
+            <li class="nav-item">
+              <%= link_to "Créer un événement", root_path, :class=>"nav-link" %>
+            </li>
+            <!-- push a droite -->
+            <div class="session-nav">
+              <!-- !! connected !! -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profil
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Mon profil</a></li>
+                  <li><a class="dropdown-item" href="#">Me deconnecter</a></li>
+                </ul>
+              </li>
+              <!-- !! visitor !! -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Se connecter
+                </a>
+                <ul class="dropdown-menu link-light">
+                  <%= link_to "Se connecter", new_user_session_path, :class=>"dropdown-item" %>
+                  <%= link_to "S'incrire", new_user_registration_path, :class=>"dropdown-item" %>
+                </ul>
+              </li>
+            </div>
           </ul>
-        </li>
-        <!-- !! visitor !! -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Se connecter
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Se connecter</a></li>
-            <li><a class="dropdown-item" href="#">S'incrire</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  <!-- NAVBAR END -->
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR END -->
     <%= yield %>
   </body>
 </html>
