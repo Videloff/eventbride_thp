@@ -43,7 +43,7 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Mon profil</a></li>
-                    <%= link_to "Me deconnecter", destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
+                    <%= link_to "Me deconnecter", destroy_user_session_path, :class=>"dropdown-item", data: {turbo_method: :delete} %>
                   </ul>
                 </li>
               <!-- !! visitor !! -->
