@@ -1,0 +1,31 @@
+<center>
+  <br>
+  <div class="card-center">
+    <div class="card" style="width: 550px">
+      <div class="card-header">
+        <h2 class=" card-txt">Créer un événement</h2>
+      </div>
+      <div class="card-body ">
+        <%= form_tag('/events', method: 'post' ) do %>
+          <div class="mb-3">
+            <%= text_field_tag :title, nil, placeholder: "Nom de l'event", :class=>"form-control", size: 40 %>
+            <br>
+            <%= text_field_tag :location, nil, placeholder: "Lieu de l'event", :class=>"form-control", size: 40 %>
+            <br>
+            <div class="form-group">
+              <%= datetime_field_tag :start_date, nil, class: 'form-control' %>
+            </div>
+            <br>
+            <%= text_field_tag :duration, nil, placeholder: "Durée de l'event", :class=>"form-control", size: 40 %>
+            <br>
+            <%= text_area_tag :description, nil, placeholder: "Description de l'event", :class=>"form-control", rows: 4, cols: 42 %>
+            <br>
+            <%= text_field_tag :price, nil, placeholder: "Prix de participation unitaire", :class=>"form-control", size: 40 %>
+
+          </div>
+          <%= submit_tag "Valider la création du compte", class: "btn btn-dark gradient-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</center>

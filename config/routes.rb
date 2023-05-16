@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "events#index"
 
+  resources :users, only: [:show]
+
   # set root redirect '/' to '/gossips' as index 
   # root to: redirect('/events')
 end
