@@ -37,26 +37,26 @@
             <div class="session-nav drop-marge">
               <!-- !! connected !! -->
               <% if current_user %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profil
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Mon profil</a></li>
-                  <li><a class="dropdown-item" href="#">Me deconnecter</a></li>
-                </ul>
-              </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profil
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Mon profil</a></li>
+                    <%= link_to "Me deconnecter", destroy_user_session_path, :class=>"dropdown-item" %>
+                  </ul>
+                </li>
               <!-- !! visitor !! -->
               <% else %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Se connecter
-                </a>
-                <ul class="dropdown-menu">
-                  <%= link_to "Se connecter", new_user_session_path, :class=>"dropdown-item" %>
-                  <%= link_to "S'incrire", new_user_registration_path, :class=>"dropdown-item" %>
-                </ul>
-              </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Se connecter
+                  </a>
+                  <ul class="dropdown-menu">
+                    <%= link_to "Se connecter", new_user_session_path, :class=>"dropdown-item" %>
+                    <%= link_to "S'incrire", new_user_registration_path, :class=>"dropdown-item" %>
+                  </ul>
+                </li>
               <% end %>
             </div>
           </ul>
