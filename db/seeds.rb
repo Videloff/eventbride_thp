@@ -3,7 +3,7 @@ Event.delete_all
 User.delete_all
 
 # Créer 10 utilisateurs
-3.times do
+2.times do
   User.create!(
     email: Faker::Internet.email(domain: 'yopmail.com'),
     password: Faker::Internet.password,
