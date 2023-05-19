@@ -13,7 +13,7 @@
       <p class="card-txt card-title text-secondary">Pour plus de renseignement, contactez <%= @event.admin.first_name %> par mail : <%= @event.admin.email %></p>
       <p class="card-txt card-title text-secondary"><%= @count %> utilisateur(s) inscrit actuellement</p>
       <h2 class="card-txt">Prix de la participation : <%= @event.price %>€</h2>
-      <% if current_user != @event.admin && @registered == false %>
+      <% if current_user && current_user != @event.admin && @registered == false %>
         <%= button_to "Rejoindre l'événement", new_event_attendance_path(@event.id), method: 'get', class: "btn btn-dark gradient-button m-3" %>
       <% end %>
     </div>
