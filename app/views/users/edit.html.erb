@@ -1,0 +1,24 @@
+<center>
+
+    <br>
+  <div class="card-center">
+    <div class="card" style="width: 550px">
+      <div class="card-header">
+        <h2 class=" card-txt">Editer votre profil</h2>
+      </div>
+      <div class="card-body ">
+        <%= form_for @user do %>
+          <div class="mb-3">
+            <%= text_field_tag :first_name, nil, placeholder: "Prénom", :class=>"form-control", size: 40 %>
+            <br>
+            <%= text_field_tag :last_name, nil, placeholder: "Nom", :class=>"form-control", size: 40 %>
+            <br>
+            <%= text_area_tag :description, nil, placeholder: "Description", :class=>"form-control", rows: 4, cols: 42 %>
+          </div>
+          <%= submit_tag "Mettre en ligne", method: :update, class: "btn btn-dark gradient-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</center>

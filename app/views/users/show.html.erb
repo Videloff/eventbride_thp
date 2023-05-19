@@ -4,6 +4,12 @@
     <p><%= @user.email %></p>
     <p><%= @user.description %></p>
     <br><br>
+
+
+    <!-- edit des infos user -->
+    <%= link_to "Editer le profil", edit_user_path(@user.id), class: "btn btn-dark gradient-button m-3" %>
+
+    <!-- les gossips de l'user -->
     <div class="container">
     <div class="row">
       <% @events.sort.each do |ev| %>

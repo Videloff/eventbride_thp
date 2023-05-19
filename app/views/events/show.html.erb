@@ -1,16 +1,21 @@
 <center>
+  <br>
   <div>
     <div class="card border-secondary mb-3" style="width: 600px;">
-      <h2 class="card-title"><%= @event.title %></h2>
+      <h2 class="card-txt"><%= @event.title %></h2>
       <p class="card-header">organisé à <%= @event.location %></p>
       <br>
+      <%= image_tag @event.event_picture %>
       <p class="card-title text-secondary">Description</p>
-      <h5 class="card-header"><%= @event.description %></h5>
+      <h5 class="card-txt"><%= @event.description %></h5>
       <p class="card-title text-secondary">Dates</p>
-      <h5>Du <%= @event.start_date %> au <%= @event.start_date += @event.duration %></h5>
-      <p class="card-title text-secondary">Pour plus de renseignement, contactez <%= @event.admin.first_name %> par mail : <%= @event.admin.email %></p>
-      <p class="card-title text-secondary"><%= @registered %> utilisateur(s) inscrit actuellement</p>
-      <h2 class="card-title"><%= @event.price %>€</h2>
+      <h5 class="card-txt">Du <%= @event.start_date %> au <%= @event.start_date += @event.duration %></h5>
+      <p class="card-txt card-title text-secondary">Pour plus de renseignement, contactez <%= @event.admin.first_name %> par mail : <%= @event.admin.email %></p>
+      <p class="card-txt card-title text-secondary"><%= @count %> utilisateur(s) inscrit actuellement</p>
+      <h2 class="card-txt">Prix de la participation : <%= @event.price %>€</h2>
+      <% if current_user != @event.admin && @registered == false %>
+        <%= button_to "Rejoindre l'événement", new_event_attendance_path(@event.id), method: 'get', class: "btn btn-dark gradient-button m-3" %>
+      <% end %>
     </div>
   </div>
 </center>

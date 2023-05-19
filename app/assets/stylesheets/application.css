@@ -30,10 +30,6 @@ body {
   background-attachment: fixed;
  }
 
-.back-bg2 {
-  background: url("https://img.freepik.com/premium-vector/tropical-summer-beach-ocean-sunset-sunrise-view-cartoon-vector-illustration_194708-1178.jpg?w=2000");
-}
-
 .static-nav {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -91,6 +87,27 @@ body {
   background: linear-gradient(to bottom, #7fb6c9, #195c72);
 }
 
+.btn-pic {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pic input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
 .my_link {
   text-decoration: none;
   color:rgb(51, 131, 131);
@@ -101,10 +118,18 @@ body {
   text-shadow: 0cap;
 }
 
-    /*  Helper Styles */
-    body {
-      font-family: Varela Round;
-      background: #f1f1f1;
+.fixed-card {
+  width: 250px;
+}
+
+.pic-opt {
+  width: 100%;
+}
+
+/*  Helper Styles */
+body {
+  font-family: Varela Round;
+  background: #f1f1f1;
   }
 
   a {

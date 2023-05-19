@@ -7,6 +7,7 @@
             <div class="card-heading card-txt">
               <%= ev.title %>
             </div>
+            <%= image_tag ev.event_picture, :class=>"pic-opt" %>
             <div class="card-text card-txt">
               par <%= link_to "#{ev.admin.first_name}", user_path(ev.admin.id) %>
             </div>
@@ -21,5 +22,5 @@
         </div>
       <% end %>
     </div>
-  </div>  
+  </div>
 </center>

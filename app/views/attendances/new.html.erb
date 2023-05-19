@@ -1,0 +1,22 @@
+<center>
+  <br>
+  <% if current_user != @event.admin && @registered == false %>
+    <div class="card-center">
+      <div class="card" style="width: 550px">
+        <div class="card-header">
+          <h2 class=" card-txt">Valider votre inscription a l'événement</h2>
+        </div>
+        <div class="card-body ">
+          <%= form_tag('/events', method: 'post' ) do %>
+            <div class="mb-3">
+              <%= text_field_tag :title, nil, placeholder: "", :class=>"form-control", size: 40 %>
+              <br>
+              <%= text_area_tag :description, nil, placeholder: "Informations que vous voulez nous communiquer", :class=>"form-control", rows: 4, cols: 42 %>
+            </div>
+          <% end %>
+          <%= button_to "Passer au paiement de #{@event.price}€", checkout_create_path(total: @event.price), class: "btn btn-dark gradient-button m-3", data: {turbo: false} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</center>

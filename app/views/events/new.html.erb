@@ -6,7 +6,12 @@
         <h2 class=" card-txt">Créer un événement</h2>
       </div>
       <div class="card-body ">
-        <%= form_tag('/events', method: 'post' ) do %>
+        <%= form_tag('/events', method: 'post', multipart: true) do %>
+          <%# <span class="btn btn-dark gradient-button "> %>
+            <%# Ajouter une photo pour l'event %>
+            <%= file_field_tag :event_picture %>
+          <%# </span> %>
+          <br><br>
           <div class="mb-3">
             <%= text_field_tag :title, nil, placeholder: "Nom de l'event", :class=>"form-control", size: 40 %>
             <br>
@@ -21,9 +26,8 @@
             <%= text_area_tag :description, nil, placeholder: "Description de l'event", :class=>"form-control", rows: 4, cols: 42 %>
             <br>
             <%= text_field_tag :price, nil, placeholder: "Prix de participation unitaire", :class=>"form-control", size: 40 %>
-
           </div>
-          <%= submit_tag "Valider la création du compte", class: "btn btn-dark gradient-button" %>
+          <%= submit_tag "Mettre en ligne", class: "btn btn-dark gradient-button" %>
         <% end %>
       </div>
     </div>

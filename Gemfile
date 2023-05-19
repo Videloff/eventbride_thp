@@ -10,6 +10,7 @@ gem "faker"
 gem "table_print"
 gem "dotenv-rails"
 gem 'devise', '~> 4.2'
+gem 'stripe'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
