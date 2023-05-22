@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  namespace :admin do
+    resources :users
+    root to: 'users#index'
+  end
+
   resources :events do
-    resources :attendances
+    resources :attendances, except: [:new]
     resources :event_pictures, only: [:create]
   end
 

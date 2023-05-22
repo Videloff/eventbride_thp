@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def check_user
     @user = User.find(params['id'])
-    if current_user.id != @user.id
+    if current_user.id != @user.id && current_user&.is_admin != true
       flash[:danger]= "Bien essayé petit malin ! ;P"
       redirect_to root_path
     end

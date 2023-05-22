@@ -26,14 +26,8 @@ class EventsController < ApplicationController
       puts '$' * 100
       @event = Event.new(start_date: params[:start_date], duration: params[:duration], title: params[:title], description: params[:description], price: params[:price], location: params[:location])
       @event.admin_id = current_user.id
-      if params[:event_picture] 
-        @event.event_picture = params[:event_picture]
-      else
-        flash[:alert] = "Il est obligatoire d'associer une photo à votre événement"
-        redirect_to root_path
-      end
+      @event.event_picture = params[:event_picture]
       if @event.save
-        # redirect_to event_path(@event.id)
         redirect_to root_path
         flash[:success]= "Ton évenement a bien été créé !"
       else

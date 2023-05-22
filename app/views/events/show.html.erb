@@ -5,7 +5,9 @@
       <h2 class="card-txt"><%= @event.title %></h2>
       <p class="card-header">organisé à <%= @event.location %></p>
       <br>
-      <%= image_tag @event.event_picture %>
+      <% if @event.event_picture.attached? %>
+        <%= image_tag @event.event_picture %>
+      <% end %>
       <p class="card-title text-secondary">Description</p>
       <h5 class="card-txt"><%= @event.description %></h5>
       <p class="card-title text-secondary">Dates</p>
@@ -14,8 +16,9 @@
       <p class="card-txt card-title text-secondary"><%= @count %> utilisateur(s) inscrit actuellement</p>
       <h2 class="card-txt">Prix de la participation : <%= @event.price %>€</h2>
       <% if current_user && current_user != @event.admin && @registered == false %>
-        <%= button_to "Rejoindre l'événement", new_event_attendance_path(@event.id), method: 'get', class: "btn btn-dark gradient-button m-3" %>
+        <%= button_to "Rejoindre l'événement", event_attendance_path(@event.id), method: 'get', class: "btn btn-dark gradient-button m-3" %>
       <% end %>
     </div>
   </div>
+  <br><br>
 </center>

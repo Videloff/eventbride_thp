@@ -1,0 +1,49 @@
+<center>
+  <br>
+  <div>
+    <div class="card border-secondary mb-3 admin-size">
+      <h2 class="card-txt">Administration</h2>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="card border-secondary mb-3 admin-size">
+    <h2 class="card-txt">Utilisateurs</h2>
+    <table class="align-tab">
+      <div>
+        <thead>
+          <tr>
+            <div>
+              <th>ID </th>
+              <th>Email</th>
+              <th>Prénom</th>
+              <th>Nom</th>
+            </div>
+            <th class="px-2" style="text-align: right;">Action</th>
+          </tr>
+        </thead>
+      </div>
+      <tbody>
+        <div>
+          <% @users.sort.each do |u| %>
+            <tr>
+              <% if u&.is_admin != true %>
+                <td><%= u.id %></td>
+                <td><%= u.email %></td>
+                <td><%= u&.first_name %> </td>
+                <td><%= u&.last_name %></td>
+                <td class="session-nav" style="text-align: right;">
+                  <%= link_to "Profil", user_path(u.id), :class=>"btn btn-dark gradient-button mx-2" %> 
+                  <%= button_to admin_user_path(u.id), form: { data: { turbo_confirm: "Es-tu sur de vouloir supprimer cet utilisateur ?" } }, method: :delete, :class=>"btn btn-dark admin-gradient-button" do %>
+                    <%= image_tag("poubelle.png", alt: "delete user", :style=>"height: 18px;") %>
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </div>
+      </tbody>
+    </table>
+  </div>
+
+</center>

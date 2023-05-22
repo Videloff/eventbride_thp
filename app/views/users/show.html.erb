@@ -1,16 +1,16 @@
 <center>
-  <div class="white-txt">
-    <h1>Profil de : <%= @user.first_name %> <%= @user.last_name %></h1>
-    <p><%= @user.email %></p>
-    <p><%= @user.description %></p>
-    <br><br>
-
-
-    <!-- edit des infos user -->
-    <%= link_to "Editer le profil", edit_user_path(@user.id), class: "btn btn-dark gradient-button m-3" %>
-
-    <!-- les gossips de l'user -->
-    <div class="container">
+  <br><br>
+  <div class="card-center">
+    <div class="card border-secondary mb-3" style="width: 600px;">
+      <h2 class="card-txt"><%= @user.first_name %> <%= @user.last_name %></h2>
+      <p class="card-header"><%= @user.email %></p>
+      <p><%= @user.description %></p>
+      <!-- edit des infos user -->
+      <%= link_to "Editer le profil", edit_user_path(@user.id), class: "btn btn-dark gradient-button m-3" %>
+    </div>
+  </div>
+  <!-- les gossips de l'user -->
+  <div class="container">
     <div class="row">
       <% @events.sort.each do |ev| %>
         <% if ev.admin_id == @user.id %>

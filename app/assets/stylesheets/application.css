@@ -83,8 +83,18 @@ body {
   background: linear-gradient(to bottom, #467281, #0e4152);
   border-style: none;
 }
+
+.admin-gradient-button {
+  background: linear-gradient(to bottom, #d6651a, #791515);
+  border-style: none;
+}
+
 .gradient-button:hover {
   background: linear-gradient(to bottom, #7fb6c9, #195c72);
+}
+
+.admin-gradient-button:hover {
+  background: linear-gradient(to bottom, rgb(235, 212, 87), #b11818);
 }
 
 .btn-pic {
@@ -126,6 +136,10 @@ body {
   width: 100%;
 }
 
+.align-tab {
+  margin-left: 40px;
+}
+
 /*  Helper Styles */
 body {
   font-family: Varela Round;
@@ -134,6 +148,10 @@ body {
 
   a {
       text-decoration: none;
+  }
+
+  .admin-size {
+    width: 90%;
   }
 
   /* Card Styles */
